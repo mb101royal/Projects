@@ -1,0 +1,46 @@
+﻿@model IEnumerable<DestinationListItemViewModel>
+@{
+    ViewData["Title"] = "Index";
+}
+<div>
+    <a class="btn btn-primary" asp-action="Create" asp-controller="Destinations">Create Destination</a>
+</div>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Rating</th>
+            <th>Image</th>
+            <th colspan="2">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Id</td>
+                    <td>@item.Title</td>
+                    <td>@item.Price</td>
+                    <td>@item.Rating</td>
+                    <td>@item.ImageUrl</td>
+                    <td>
+                        <a class="btn btn-primary" asp-action="Update" asp-controller="Destinations" asp-route-id="@item.Id"></a>
+                    </td>
+                    <td>
+                        <a class="btn btn-danger" asp-action="Delete" asp-controller="Destinations" asp-route-id="@item.Id"></a>
+                    </td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="7">No data</td>
+            </tr>
+        }
+    </tbody>
+</table>

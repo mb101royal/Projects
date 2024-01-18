@@ -1,0 +1,34 @@
+﻿@model AccessoryCreateViewModel
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<!-- Begin Page Content -->
+<div class="container-fluid">
+
+    <!-- Page Heading -->
+    <h1 class="h3 mb-4 text-gray-800">Create Accessory</h1>
+
+    <form method="post" enctype="multipart/form-data">
+
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Title" asp-for="Title">
+            <span class="text-danger" asp-validation-for="Title"></span>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" placeholder="Description" asp-for="Description">
+            <span class="text-danger" asp-validation-for="Description"></span>
+        </div>
+
+        <div class="form-group">
+            <input type="file" accept="image/png, image/gif, image/jpeg" class="form-control-file" asp-for="ImageFile">
+            <span class="text-danger" asp-validation-for="ImageFile"></span>
+        </div>
+        <button type="submit" class="btn btn-primary">Create</button>
+        <a class="btn btn-info" asp-action="Index" asp-controller="Accessories">Return to Index</a>
+
+    </form>
+
+</div>
+<!-- /.container-fluid -->

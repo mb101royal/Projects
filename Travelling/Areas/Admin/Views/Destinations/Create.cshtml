@@ -1,0 +1,24 @@
+﻿@model DestinationCreateViewModel
+@{
+    ViewData["Title"] = "Create Destination";
+}
+
+<form method="post">
+    <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Title" asp-for="Title">
+        <span class="text-danger" asp-validation-for="Title"></span>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Price" asp-for="Price">
+        <span class="text-danger" asp-validation-for="Price"></span>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Rating" asp-for="Rating">
+        <span class="text-danger" asp-validation-for="Rating"></span>
+    </div>
+    <div class="mb-3">
+        <input type="text" class="form-control" placeholder="Image" asp-for="ImageUrl">
+        <span class="text-danger" asp-validation-for="ImageUrl"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
